@@ -75,3 +75,10 @@ a:link    {color:#FFF; background-color:transparent; text-decoration:none}
 a:visited {color:#FFF; background-color:transparent; text-decoration:none}
 a:hover   {color:#FFF; background-color:transparent; text-decoration:none; font-weight: bold;}
 a:active  {color:#FFF; background-color:transparent; text-decoration:none; font-weight: bold;}
+
+@media screen and (max-width: 500px) {
+/* applies only if the screen is narrower than 500px */
+  .tabs {
+    padding: 3px 1em
+  }
+}

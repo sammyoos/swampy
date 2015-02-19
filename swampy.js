@@ -13,8 +13,8 @@ var i = 0;
 
 function resetEdges()
 {
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
+	canvas.width = ( window.innerWidth > screen.availWidth ) ? screen.availWidth : window.innerWidth;
+	canvas.height = ( window.innerHeight > screen.availHeight ) ? screen.availHeight : window.innerHeight;
 }
 
 
