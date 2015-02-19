@@ -4,11 +4,12 @@ var ctx; // context for canvas
 var mode = 0;
 var maxMode = 1;
 
+var subMode = 0;
+var maxSubMode = 0;
+
 var maxIncs = 100;
 var i = 0;
 
-var footballMode = 0;
-var maxFootballMode = 4;
 
 function resetEdges()
 {
@@ -25,11 +26,55 @@ function clearScreen ( ctx, canvas )
 
 function drawFootball()
 {
-    ctx.beginPath();
-	ctx.moveTo( i * canvas.width / maxIncs, 0 );
-	ctx.lineTo( 0, canvas.height - i * canvas.height / maxIncs );
-    ctx.closePath();
+	var x1, x2, y1, y2;
+
+	switch( subMode ){
+		case 0:
+			x1 = i * canvas.width / maxIncs;
+			y1 = 0;
+			x2 = 0;
+			y2 = canvas.height - i * canvas.height / maxIncs
+			break;
+		case 1:
+			x1 = canvas.width-1;
+			y1 = i * canvas.height / maxIncs;
+			x2 = i * canvas.width / maxIncs;
+			y2 = 0;
+			break;
+		case 2:
+			x1 = canvas.width-1;
+			y1 = i * canvas.height / maxIncs;
+			x2 = canvas.width - i * canvas.width / maxIncs;
+			y2 = canvas.height-1;
+			break;
+		case 3:
+			x1 = canvas.width - i * canvas.width / maxIncs;
+			y1 = canvas.height-1;
+			x2 = 0;
+			y2 = canvas.height - i * canvas.height / maxIncs
+			break;
+		default:
+			// oh oh
+	}
+
+	ctx.beginPath();
+	ctx.moveTo( x1, y1 );
+	ctx.lineTo( x2, y2 );
+	ctx.closePath();
 	ctx.stroke();
+
+}
+
+function resetMode( m )
+{
+	switch( m ){
+		case 0: // football mode
+			maxSubMode = 4;
+			break;
+		default:
+			// oh oh
+	}
+
 }
 
 function resetEdges()
@@ -46,7 +91,8 @@ function clearScreen()
 }
 
 
-function main() {
+function main() 
+{
   canvas = document.getElementById('swamp');
   if (canvas.getContext) {
     ctx = canvas.getContext('2d');
@@ -54,12 +100,18 @@ function main() {
 	resetEdges();
 	clearScreen();
 
+	resetMode( 0 );
 	setInterval( updateLines, 30 );
   }
 }
 
 function updateLines()
 {
+	if( mode > maxMode )
+	{
+		return; 
+	}
+
 	switch( mode ){
 		case 0:
 			drawFootball();
@@ -71,12 +123,18 @@ function updateLines()
 	if( ++i >= maxIncs )
 	{
 		i = 0;
-		++mode;
 
-		if( mode >= maxMode )
+		if( ++subMode >= maxSubMode )
 		{
-			mode = 0;
+			subMode = 0;
+
+			if( ++mode >= maxMode )
+			{
+				// mode = 0;
+			}
+			resetMode( mode );
 		}
+		console.log( "Mode: " + mode + " - subMode : " + subMode )
 	}
 
 }
