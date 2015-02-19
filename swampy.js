@@ -15,6 +15,10 @@ function resetEdges()
 {
 	canvas.width = ( window.innerWidth > screen.availWidth ) ? screen.availWidth : window.innerWidth;
 	canvas.height = ( window.innerHeight > screen.availHeight ) ? screen.availHeight : window.innerHeight;
+
+	trace( 'DEBUG: devicePixelRatio='+window.devicePixelRatio)
+	trace( 'DEBUG: width='+canvas.width+'(innerWidth=' + window.innerWidth + ', availWidth=' + screen.availWidth + ')' )
+	trace( 'DEBUG: height='+canvas.height+'(innerHeight=' + window.innerHeight + ', availHeight=' + screen.availHeight + ')' )
 }
 
 
@@ -77,7 +81,7 @@ function resetMode( m )
 
 }
 
-function resetEdges()
+function resetEdgess()
 {
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
@@ -134,7 +138,7 @@ function updateLines()
 			}
 			resetMode( mode );
 		}
-		console.log( "Mode: " + mode + " - subMode : " + subMode )
+		trace( "Mode: " + mode + " - subMode : " + subMode )
 	}
 
 }
