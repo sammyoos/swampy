@@ -16,15 +16,18 @@ function resetEdges()
 	canvas.width = ( window.innerWidth > screen.availWidth ) ? screen.availWidth : window.innerWidth;
 	canvas.height = ( window.innerHeight > screen.availHeight ) ? screen.availHeight : window.innerHeight;
 
-	//document.getElementById("viewport").setAttribute('content', 'width = ' + canvas.width + ', height = ' + canvas.height + ', maximum-scale = 1.0, minimum-scale = 1.0');
-	//document.getElementById("viewport").setAttribute('content', 'width = ' + canvas.width )
+	/*
 	viewport = document.querySelector("meta[name=viewport]");
 	if( viewport )
 	{
-		viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0');
+		viewport.setAttribute('content', 'width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0');
 	}
+	else
+	{
+		trace( 'ERROR: no viewport found' )
+	}
+	*/
 
-	trace( 'DEBUG: devicePixelRatio='+window.devicePixelRatio)
 	trace( 'DEBUG: width='+canvas.width+'(innerWidth=' + window.innerWidth + ', availWidth=' + screen.availWidth + ')' )
 	trace( 'DEBUG: height='+canvas.height+'(innerHeight=' + window.innerHeight + ', availHeight=' + screen.availHeight + ')' )
 }
@@ -32,7 +35,7 @@ function resetEdges()
 
 function clearScreen ( ctx, canvas )
 {
-	ctx.fillStyle = "rgba(0,0,0,0.8)";
+	ctx.fillStyle = "rgba(0,0,0,0.0)";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
@@ -103,20 +106,6 @@ function clearScreen()
 }
 
 
-function main() 
-{
-  canvas = document.getElementById('swamp');
-  if (canvas.getContext) {
-    ctx = canvas.getContext('2d');
-
-	resetEdges();
-	clearScreen();
-
-	resetMode( 0 );
-	setInterval( updateLines, 30 );
-  }
-}
-
 function updateLines()
 {
 	if( mode > maxMode )
@@ -146,7 +135,33 @@ function updateLines()
 			}
 			resetMode( mode );
 		}
-		trace( "Mode: " + mode + " - subMode : " + subMode )
+		//trace( "Mode: " + mode + " - subMode : " + subMode )
 	}
 
 }
+
+function toggleMinimize()
+{
+	trace( "Hit Minimize" );
+
+	return( true )
+}
+
+
+function main() 
+{
+  canvas = document.getElementById('swamp');
+  if (canvas.getContext) {
+    ctx = canvas.getContext('2d');
+
+	var clk = document.getElementById("s_header");
+	clk.onclick  = toggleMinimize;
+
+	resetEdges();
+	clearScreen();
+
+	resetMode( 0 );
+	setInterval( updateLines, 30 );
+  }
+}
+
