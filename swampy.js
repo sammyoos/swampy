@@ -143,22 +143,19 @@ function updateLines()
 function hitMinimize()
 {
 	trace( "Hit Minimize" );
-
-	return( true )
+	document.getElementById( "content" ).className = "min";
 }
 
 function hitMaximize()
 {
 	trace( "Hit Maximize" );
-
-	return( true )
+	document.getElementById( "content" ).className = "max";
 }
 
 function hitKill()
 {
 	trace( "Hit Kill" );
-
-	return( true )
+	document.getElementById( "content" ).className = "kill";
 }
 
 
