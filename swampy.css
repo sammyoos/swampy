@@ -6,7 +6,37 @@ body, #swamp
 	margin:0px;
 }
 
-#splash
+h3
+{
+	font-family: "Verdana";
+	font-size: 110%;
+	text-shadow: 1px 1px #000;
+
+	color: #FFF;
+
+}
+
+#splashWords
+{
+	position: absolute;
+	margin:0px;
+	filter:alpha(opacity=50);
+	opacity:.5;
+
+	background: #888;
+
+	left: 50%;
+	margin-left: -218px;
+	width: 218px;
+
+	top: 100px;
+	height: 290px;
+
+	font-size: 88%;
+}
+
+
+#splashPic
 {
 	position: absolute;
 	margin:0px;
@@ -18,11 +48,13 @@ body, #swamp
     background-repeat: no-repeat;
 
 	left: 50%;
-	margin-left: -114px;
+	margin-left: 0px;
 	width: 218px;
 
 	top: 100px;
 	height: 290px;
+
+	font-size: 120%;
 }
 
 p 
@@ -33,7 +65,6 @@ p
 	color: #FFF;
 
 	font-family: "Verdana";
-	font-size: 120%;
 }
 
 #s_header
