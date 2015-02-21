@@ -2,12 +2,9 @@
 <html>
 <head>
 <title>sammyoos :: Samuel Oosterhuis</title>
-<meta name="viewport" content="width=device-width; initial-scale=1.0;">
-<script type="text/javascript" src="trace.js"></script>
-<link rel="stylesheet" type="text/css" href="trace.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/javascript" src="swampy.js"></script>
 <link rel="stylesheet" type="text/css" href="swampy.css">
-<!-- ICONS: https://www.flickr.com/photos/jurgenappelo/sets/72157630992145320/ -->
 </head>
 
 <body onload="main()">
@@ -16,38 +13,42 @@
 
 <canvas id="swamp"></canvas>
 
-<div id="splashWords">
-	<h3>&nbsp; Quick BIO</h3>
-	<p>I truly enjoy software development,
-	learning new things, and tinkering
-	with different technologies.  My passion
-	lies in making software the best it can
-	be.
-	</p>
-	<p>My current area of focus is creating
-	software test automation frameworks to enable
-	high value (and stable) automated tests.
-	</p>
+<div id="content" class="max">
+	<div id="splashWords">
+		<h3>&nbsp; Quick BIO</h3>
+		<p>I truly enjoy software development,
+		learning new things, and tinkering
+		with different technologies.  My passion
+		lies in making software the best it can
+		be.
+		</p>
+		<p>My current area of focus is creating
+		software test automation frameworks to enable
+		high value (and stable) automated tests.
+		</p>
 
-</div>
-
-<div id="splashPic">
-	<div id="s_header">
-		<p><a href="#"><span id="control">[-]</span> sammyoos ::</a><br>
-		<span id="name">Samuel Oosterhuis</span></p>
 	</div>
 
-	<div id="s_footer">
-		<table id="links">
-			<tr>
-				<td><a href="http://github.com/sammyoos"><img class="icon" src="img/github.png"></a></td>
-				<td><a href="http://ca.linkedin.com/in/sammyo"><img class="icon" src="img/linkedin.png"></a></td>
-				<td><a href="https://plus.google.com/+SamuelOosterhuis/"><img class="icon" src="img/gplus.png"></a></td>
-				<td><a href="https://twitter.com/soosterh"><img class="icon" src="img/twitter.png"></a></td>
-			</tr>
-		</table>
-	</div>
+	<div id="splashPic">
+		<p id="controls">
+			<a href="#" id="ctrlMin">[-]</a>
+			<a href="#" id="ctrlMax">[+]</a>
+			<a href="#" id="ctrlKill">[x]</a>
+		</p>
+		<p id="name">Samuel Oosterhuis</p>
 
+		<div id="s_footer">
+			<table id="links">
+				<tr>
+					<td><a href="http://github.com/sammyoos"><img class="icon" src="img/github.png"></a></td>
+					<td><a href="http://ca.linkedin.com/in/sammyo"><img class="icon" src="img/linkedin.png"></a></td>
+					<td><a href="https://plus.google.com/+SamuelOosterhuis/"><img class="icon" src="img/gplus.png"></a></td>
+					<td><a href="https://twitter.com/soosterh"><img class="icon" src="img/twitter.png"></a></td>
+				</tr>
+			</table>
+		</div>
+
+	</div>
 </div>
 
 </body>

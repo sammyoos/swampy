@@ -140,9 +140,23 @@ function updateLines()
 
 }
 
-function toggleMinimize()
+function hitMinimize()
 {
 	trace( "Hit Minimize" );
+
+	return( true )
+}
+
+function hitMaximize()
+{
+	trace( "Hit Maximize" );
+
+	return( true )
+}
+
+function hitKill()
+{
+	trace( "Hit Kill" );
 
 	return( true )
 }
@@ -154,8 +168,9 @@ function main()
   if (canvas.getContext) {
     ctx = canvas.getContext('2d');
 
-	var clk = document.getElementById("s_header");
-	clk.onclick  = toggleMinimize;
+	document.getElementById("ctrlMin" ).onclick  = hitMinimize;
+	document.getElementById("ctrlMax" ).onclick  = hitMaximize;
+	document.getElementById("ctrlKill").onclick  = hitKill;
 
 	resetEdges();
 	clearScreen();

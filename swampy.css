@@ -4,73 +4,76 @@ body, #swamp
 	width:100%; 
 	height:100%; 
 	margin:0px;
+
+	font-family: "Verdana";
+	color: #FFF;
+	text-shadow: 1px 1px #000;
 }
 
 h3
 {
 	font-family: "Verdana";
-	font-size: 110%;
-	text-shadow: 1px 1px #000;
-
-	color: #FFF;
-
+	margin: 10px;
 }
 
-#splashWords
+p 
+{
+	margin: 10px;
+}
+
+
+#content.max
 {
 	position: absolute;
+
 	margin:0px;
 	filter:alpha(opacity=50);
 	opacity:.5;
 
-	background: #888;
-
+	top: 100px;
 	left: 50%;
 	margin-left: -218px;
-	width: 218px;
+	width: 436px;
 
-	top: 100px;
 	height: 290px;
+}
+
+.max > #splashWords
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+
+	width: 49%;
+	height: 99%;
+	background: #888;
 
 	font-size: 88%;
 }
 
 
-#splashPic
+.max > #splashPic
 {
 	position: absolute;
-	margin:0px;
-	filter:alpha(opacity=50);
-	opacity:.5;
+	top: 0px;
+	left: 218px;
+
+	width: 50%;
+	height: 100%;
 
 	background: url(img/so.jpg);
 	background-size: 100% 100%;
     background-repeat: no-repeat;
 
-	left: 50%;
-	margin-left: 0px;
-	width: 218px;
-
-	top: 100px;
-	height: 290px;
-
 	font-size: 120%;
 }
 
-p 
+
+.max > #splashPic > #controls
 {
-	margin: 8px;
-	text-shadow: 1px 1px #000;
-
-	color: #FFF;
-
-	font-family: "Verdana";
-}
-
-#s_header
-{
-	filter:alpha(opacity=100);
-	opacity:1;
+	font-family: "Lucida Console";
+	font-size: 88%;
+	text-align: right;
 }
 
 #s_footer
