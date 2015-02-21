@@ -144,18 +144,21 @@ function hitMinimize()
 {
 	trace( "Hit Minimize" );
 	document.getElementById( "content" ).className = "min";
+	document.getElementById( "trace" ).className = "notrace";
 }
 
 function hitMaximize()
 {
 	trace( "Hit Maximize" );
 	document.getElementById( "content" ).className = "max";
+	document.getElementById( "trace" ).className = "notrace";
 }
 
 function hitKill()
 {
 	trace( "Hit Kill" );
 	document.getElementById( "content" ).className = "kill";
+	document.getElementById( "trace" ).className = "window";
 }
 
 

@@ -21,6 +21,21 @@ p
 	margin: 10px;
 }
 
+td
+{
+	text-align: center;
+}
+
+img.icon
+{
+	width: 50px;
+	height: 50px;
+}
+
+a:link    {color:#FFF; background-color:transparent; text-decoration:none}
+a:visited {color:#FFF; background-color:transparent; text-decoration:none}
+a:hover   {color:#FFF; background-color:transparent; text-decoration:none; font-weight: bold;}
+
 /*
  * CSS for when the content is maximized
  */
@@ -215,23 +230,11 @@ p
 	display: none;
 }
 
-
-td
-{
-	text-align: center;
+#trace.notrace {
+	display: none;
 }
 
-img.icon
-{
-	width: 50px;
-	height: 50px;
-}
-
-a:link    {color:#FFF; background-color:transparent; text-decoration:none}
-a:visited {color:#FFF; background-color:transparent; text-decoration:none}
-a:hover   {color:#FFF; background-color:transparent; text-decoration:none; font-weight: bold;}
-
-.window {
+#trace.window {
   z-index: 10;
   position: absolute;
   left: 10px;
