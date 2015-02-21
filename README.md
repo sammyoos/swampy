@@ -1,5 +1,7 @@
 # :: swampy :: Line Patterns on Web Page
 
+[GitHub hosted version of swampy](http://sammyoos.github.io/swampy/)
+
 ## About this project
 
 I have always enjoyed creating interesting line patterns, though I've never
