@@ -21,6 +21,9 @@ p
 	margin: 10px;
 }
 
+/*
+ * CSS for when the content is maximized
+ */
 
 #content.max
 {
@@ -76,23 +79,142 @@ p
 	text-align: right;
 }
 
-#s_footer
+.max > #splashPic > #controls > #ctrlMax
+{
+	display: none;
+}
+
+.max > #splashPic > #links
 {
 	position: absolute;
 	bottom: 0;
 
 	filter:alpha(opacity=80);
 	opacity:.8;
-}
 
-
-#links
-{
 	width: 100%;
 	border: 0px;
 	border-collapse: collapse;
 	border-spacing: 0px;
 }
+
+/*
+ * CSS for when the content is minimized
+ */
+
+#content.min
+{
+	position: absolute;
+
+	margin:0px;
+	filter:alpha(opacity=50);
+	opacity:.5;
+
+	bottom: 10px;
+	left: 10px;
+
+	height: 100px;
+}
+
+.min > #splashWords
+{
+	display: none;
+}
+
+
+.min > #splashPic
+{
+	position: absolute;
+	top: 0;
+
+	background: #888;
+
+	font-size: 75%;
+}
+
+
+.min > #splashPic > #controls
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	font-family: "Lucida Console";
+	text-align: right;
+}
+
+.min > #splashPic > #controls > #ctrlMin
+{
+	display: none;
+}
+
+.min > #splashPic > #links
+{
+	filter:alpha(opacity=80);
+	opacity:.8;
+
+	width: 100%;
+	border: 0px;
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+
+/*
+ * CSS for when the content is killed
+ */
+
+#content.kill
+{
+	position: absolute;
+
+	margin:0px;
+	filter:alpha(opacity=50);
+	opacity:.5;
+
+	bottom: 10px;
+	left: 10px;
+
+	height: 50px;
+	width: 100px;
+}
+
+.kill > #splashWords
+{
+	display: none;
+}
+
+
+.kill > #splashPic
+{
+	position: absolute;
+	top: 0;
+
+	background: #888;
+
+	font-size: 75%;
+}
+
+.kill > #splashPic > #name
+{
+	display: none;
+}
+
+.kill > #splashPic > #controls
+{
+	font-family: "Lucida Console";
+	text-align: right;
+}
+
+.kill > #splashPic > #controls > #ctrlKill
+{
+	display: none;
+}
+
+.kill > #splashPic > #links
+{
+	display: none;
+}
+
 
 td
 {
