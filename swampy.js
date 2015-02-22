@@ -12,6 +12,21 @@ var i = 0;
 
 var halfX, halfY;
 
+var maxRGB = 105;
+var curRGB = 0;
+
+var colorR = 0;
+var colorG = 0;
+var colorB = 0;
+
+var targetR = maxRGB;
+var targetG = maxRGB;
+var targetB = maxRGB;
+
+var incR = 1;
+var incG = 1;
+var incB = 1;
+
 function hitMinimize()
 {
 	trace( "Hit Minimize" );
@@ -171,6 +186,31 @@ function drawFootball()
 
 }
 
+function pickNewColor()
+{
+	if( ++curRGB >= maxRGB )
+	{
+		curRGB = 0;
+
+		colorR = targetR;
+		colorG = targetG;
+		colorB = targetB;
+
+		targetR = (Math.random() * maxRGB / 2) + 5;
+		targetG = (Math.random() * maxRGB / 2) + 5;
+		targetB = (Math.random() * maxRGB / 2) + 5;
+
+		incR = ( targetR - colorR ) / maxRGB;
+		incG = ( targetG - colorG ) / maxRGB;
+		incB = ( targetB - colorB ) / maxRGB;
+	}
+
+	return( "rgb(" + Math.round( colorR + curRGB * incR )
+			+ ","  + Math.round( colorG + curRGB * incG )
+			+ ","  + Math.round( colorB + curRGB * incB )
+			+ ")"  );
+}
+
 function resetMode( m )
 {
 	switch( m ){
@@ -221,6 +261,8 @@ function updateLines()
 		default:
 			// oh oh
 	}
+
+	ctx.strokeStyle = pickNewColor()
 	
 	if( ++i >= maxIncs )
 	{
@@ -242,6 +284,8 @@ function main()
   canvas = document.getElementById('swamp');
   if (canvas.getContext) {
     ctx = canvas.getContext('2d');
+	ctx.globalCompositeOperation = "screen";
+	ctx.globalCompositeOperation = "lighter";
 
 	document.getElementById("ctrlMin" ).onclick  = hitMinimize;
 	document.getElementById("ctrlMax" ).onclick  = hitMaximize;
